@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
 import fs from 'fs';
+import generateMarkdown from './utils/generateMarkdown.js'
+import { licenseBadge, licenseLink, licenseSection } from './utils/generateMarkdown.js';
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -13,6 +15,12 @@ const questions = [
         type: "input",
         name: 'description',
         message: 'What do you want in the description?'
+    },
+    {
+        type: "list",
+        name: 'license',
+        message: 'What kind of license do you want?',
+        choices: ['MIT', 'ISC', 'BSD', 'Apache', 'I dont want one']
     },
     {
         type: "input",
@@ -33,11 +41,21 @@ const questions = [
         type: "input",
         name: 'test',
         message: 'What are your test instructions?'
+    },
+    {
+        type: "input",
+        name: 'github',
+        message: 'What is your github profile?'
+    },
+    {
+        type: "input",
+        name: 'email',
+        message: 'What is your email address?'
     }
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {}
