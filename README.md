@@ -29,7 +29,7 @@ Step 5. you will have a new README file created, locate it, and that is your gen
 
 Here is the Github repository: https://github.com/Bluzke/README-generator
 
-Here is the generated README: 
+Here is the generated README: https://github.com/Bluzke/README-generator/blob/main/GENERATEDREADME.md
 
 Here is the link to the video walk-through: https://drive.google.com/file/d/1pMzQZkSySaZ2Pp5F4Sz1HGupiaXK-Tsm/view
 
