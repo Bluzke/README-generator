@@ -1,22 +1,58 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-export const licenseBadge = function renderLicenseBadge(license) {}
+ function renderLicenseBadge(license) {
+  if(license === 'MIT') {
+    return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+  } else if (license === 'ISC') {
+    return "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)"
+  } else if (license === 'BSD') {
+    return "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"
+  } else if (license === 'Apache') {
+    return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+  } else {
+    return ""
+  }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-export const licenseLink = function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if(license === 'MIT') {
+    return `Here is the link to your license:"https://opensource.org/license/MIT"`
+  } else if (license === 'ISC') {
+    return `Here is the link to your license:"https://opensource.org/license/isc-license-txt"`
+  } else if (license === 'BSD') {
+    return `Here is the link to your license:"https://opensource.org/license/BSD-3-Clause"`
+  } else if (license === 'Apache') {
+    return `Here is the link to your license:"https://opensource.org/license/apache-2-0"`
+  } else {
+    return ""
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-export const licenseSection = function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if(license === 'MIT') {
+    return 'MIT License'
+  } else if (license === 'ISC') {
+    return 'ISC License'
+  } else if (license === 'BSD') {
+    return 'IBM License'
+  } else if (license === 'Apache') {
+    return 'Apache License'
+  } else {
+    return ""
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 
 function generateMarkdown(data) {
   const generatedAnswers= data
-  const {title, description, installation, usage, contribution, test, github, email } = generatedAnswers
+  const {title, description, license, installation, usage, contribution, test, github, email } = generatedAnswers
   return `
-  ${licenseBadge}
+  ${renderLicenseBadge(license)}
   # ${title}
 
 ## Description
@@ -52,7 +88,8 @@ ${github}
 ${email}
 
 
-## License
+## ${renderLicenseSection(license)}
+${renderLicenseLink(license)}
 
 
 
